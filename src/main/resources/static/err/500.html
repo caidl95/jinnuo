@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html><head>
+    <title>500</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"/>
+
+    <script type="text/javascript">
+        // 展示提示信息
+        function showMessage(title, msg, isSuccess) {
+            if (!isSuccess) {
+                msg = msg || '';
+            } else {
+                msg = msg || '操作成功'
+            }
+            $.gritter.add({
+                title: title,
+                text: msg != '' ? msg : "服务器处理异常, 建议刷新页面来保证数据是最新的",
+                time: '',
+                class_name: (isSuccess ? 'gritter-success' : 'gritter-warning') + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+            });
+        }
+    </script>
+</head>
+<body class="no-skin" youdao="bind" style="background: white">
+<div class="main-content-inner">
+    <div class="page-content">
+        <!-- /.ace-settings-container -->
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- PAGE CONTENT BEGINS -->
+
+                <div class="error-container">
+                    <div class="well">
+                        <h1 class="grey lighter smaller">
+                            <span class="blue bigger-125">
+                                <i class="ace-icon fa fa-random"></i>
+                                500
+                            </span>
+                            服务器内部错误
+                        </h1>
+
+                        <hr>
+                        <h3 class="lighter smaller">
+                            我们正在修复它
+                            <i class="ace-icon fa fa-wrench icon-animated-wrench bigger-125"></i>
+                        </h3>
+
+                        <div class="space"></div>
+                        <div>
+                            <h4 class="lighter smaller">与此同时, 可以尝试以下:</h4>
+                            <ul class="list-unstyled spaced inline bigger-110 margin-15">
+                                <li>
+                                    <i class="ace-icon fa fa-hand-o-right blue"></i>
+                                    阅读FAQ
+                                </li>
+
+                                <li>
+                                    <i class="ace-icon fa fa-hand-o-right blue"></i>
+                                    联系管理员,说明问题
+                                </li>
+                            </ul>
+                        </div>
+
+                        <hr>
+                        <div class="space"></div>
+
+                        <div class="center">
+                            <a href="javascript:history.back()" class="btn btn-grey">
+                                <i class="ace-icon fa fa-arrow-left"></i>
+                                上一页
+                            </a>
+
+                            <a href="#" class="btn btn-primary">
+                                <i class="ace-icon fa fa-tachometer"></i>
+                                Dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- PAGE CONTENT ENDS -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.page-content -->
+</div>
+
+
+</body></html>

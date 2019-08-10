@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sellAdd</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link  rel="stylesheet" href="sellAdd.css">
+    <link rel="stylesheet" href="../../dialog.js-master/css/dialog.css">
+</head>
+<body>
+<video style="width:100%"  autobuffer="autobuffer" autoloop="autoloop" loop="loop"  id="title_sp" muted="muted" autoplay="autoplay"  >
+    <source src="../mp4/5790382.mp4" type="video/mp4" id="sp_mp4">
+    <source src="../mp4/5790382.webm" >
+</video>
+
+<div class="login-flex">
+    <div class="container login-container login-container-flex">
+        <div class="row login-page">
+            <div>
+                <div>
+                    <div class="loginDiv">
+                        <div>
+                            <div id="login_logo" class="icon-logo">
+                            </div>
+                            <a id="pngDivId-A" href="#" >
+                                <div id="pngDivId" class="pngDiv"> </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="loginPngDiv">
+                    </div>
+                    <div class="errorMessage">
+                        <strong class="login-error"> </strong>
+                    </div>
+                    <div id="panel-body-id" class="panel-body" >
+                        <form id="form-sell-add" action="" method="post">
+                            <fieldset class="panel-fieldset">
+                                <div class="form-group">
+                                    <input id="clientName" class="form-control login_userName" placeholder="请输入客户名称" type="text" name="clientName">
+                                </div>
+                                <div class="form-group">
+                                    <input id="phone" class="form-control login_password" placeholder="请输入客户的手机号码" type="text" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <input id="productName" class="form-control login_password" placeholder="请输入商品名称" type="text" name="productName">
+                                </div>
+                                <div class="form-group">
+                                    <input id="num" class="form-control login_password" placeholder="请输入销售数量" type="text" name="num">
+                                </div>
+                                <div class="form-group">
+                                    <input id="payment" class="form-control login_password" placeholder="请输入实际收款" type="text" name="payment">
+                                </div>
+                                <div class="form-group">
+                                    <input id="payType" type="radio" name="payType" value="1"  />支付宝
+                                    <input id="payType" type="radio" name="payType" value="2"  />微　信
+                                    <input id="payType" type="radio" name="payType" value="3"  />现　金
+                                    <!--  <input id="payType" class="form-control login_password" placeholder="请输入支付方式：1-支付宝,2-微信,3-现金" type="text" name="payType">-->
+                                </div>
+                                <div class="form-group">
+                                    <input id="place" type="radio" name="place" value="1"  />仓　库
+                                    <input id="place" type="radio" name="place" value="2"  />店　内
+                                </div>
+                                <div class="form-group">
+                                    <input id="endTime" class="form-control login_password" placeholder="交易完成时间"  type="datetime-local"  name="endTime">
+                                </div>
+                                <div class="checkbox" style="color: red;"></div>
+                                <button id="btn-sell-add" class="btn btn-lg btn-primary btn-block" type="button"><span class="font-color">增　加</span></button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../dialog.js-master/js/zepto.min.js"></script>
+<script src="../../dialog.js-master/js/dialog.js"></script>
+<script type="text/javascript" src="sellAdd.js" ></script>
+<script >
+    $(document).ready(function(){
+        var num = 0;
+        setInterval(function () {
+            num++;
+            $("#pngDivId").css({"transform": "rotate(" + num + "deg)"})
+        }, 8);
+    });
+    $("#pngDivId-A").click(function(){
+        var state =$("#panel-body-id").css("display")=="none"?"block":"none";
+        $("#panel-body-id").css("display",state);
+    });
+</script>
+</body>
+</html>

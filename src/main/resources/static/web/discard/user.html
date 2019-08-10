@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>update</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 本地文件 -->
+    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="../../dialog.js-master/css/dialog.css">
+</head>
+<body>
+<video style="width:100%" autobuffer="autobuffer" autoloop="autoloop" loop="loop" id="title_sp" muted="muted"
+       autoplay="autoplay">
+    <source src="../mp4/5790382.mp4" type="video/mp4" id="sp_mp4">
+    <source src="../mp4/5790382.webm">
+</video>
+
+<div class="login-flex">
+    <div class="container login-container login-container-flex">
+        <div class="row login-page">
+            <div>
+                <div>
+                    <div class="loginDiv">
+                        <div id="div-login">
+                            <div id="login_logo" class="icon-logo">
+                                <!--  <img src="img/20190611103417.png">-->
+                            </div>
+                            <a id="pngDivId-A" href="#">
+                                <div id="pngDivId" class="pngDiv"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="loginPngDiv">
+                    </div>
+                    <div class="errorMessage">
+                        <strong class="login-error"> </strong>
+                    </div>
+                    <div id="panel-body-id" class="panel-body">
+                        <form id="form-update" action="" method="post">
+                            <fieldset class="panel-fieldset">
+                                <div class="form-group">
+                                    <input id="username" class="form-control login_password" placeholder="Telephone"
+                                           readonly="readonly" type="text" name="username">
+                                </div>
+                                <div class="form-group">
+                                    <input id="email" class="form-control login_password" placeholder="请输入邮箱"
+                                           type="text" name="email">
+                                </div>
+                                <div class="form-group">
+                                    <input id="phone" class="form-control login_password" placeholder="请输入手机号码"
+                                           type="text" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <input id="question" class="form-control login_password" placeholder="请输入密保问题"
+                                           type="text" name="question">
+                                </div>
+                                <div class="form-group">
+                                    <input id="answer" class="form-control login_password" placeholder="请输入密保答案"
+                                           type="text" name="answer">
+                                </div>
+                                <div class="checkbox" style="color: red;"></div>
+                                <button id="btn-update" class="btn btn-lg btn-primary btn-block" type="button"><span
+                                        class="font-color">修改信息</span></button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../../dialog.js-master/js/zepto.min.js"></script>
+<script src="../../dialog.js-master/js/dialog.js"></script>
+<script type="text/javascript" src="userInfo.js"></script>
+<script type="text/javascript">
+    var num = 0;
+    setInterval(function () {
+        num++;
+        $("#pngDivId").css({"transform": "rotate(" + num + "deg)"})
+    }, 8);
+    $("#pngDivId-A").click(function () {
+        var state = $("#panel-body-id").css("display") == "none" ? "block" : "none";
+        $("#panel-body-id").css("display", state);
+        javascript:showCartList();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>product</title>
+    <!-- 标题logo -->
+    <!--<link rel="shortcut icon" href="./imgs/logo1.jpg">-->
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../dialog.js-master/css/dialog.css">
+    <link  rel="stylesheet" href="css/product.css">
+   <script src="../js/jquery-1.9.1.min.js"></script>
+
+</head>
+<body>
+
+<div id="placeholder">
+    <div id="box" class="form-group">
+        <form id="form-input">
+            <input type="radio" name="place" value="1"  />仓　库
+            <input type="radio" name="place" value="2"  />店　内
+            <input id="input-ss"  class="form-control login_password" type="text" name="keyword" placeholder="请按照商品名称查询">
+        <button id="search" class="btn btn-lg btn-primary btn-block" type="button"><span id="search-span">搜索 </span></button>
+        </form> </div>
+</div>
+
+<div id="add-product-yy" style="display: none"><!---->
+    <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-describedby="dialog-dept-form" aria-labelledby="ui-id-1" style="position: absolute; height: auto; width: 400px; top: 18%; left: 40%; display: block;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+        <span id="ui-id-1" class="ui-dialog-title">添加商品详情</span>
+        <button type="button" class="ui-dialog-titlebar-close" style="display: none;"></button></div>
+        <div id="dialog-dept-form" style="width: auto; min-height: 34px; max-height: none; height: auto;" class="ui-dialog-content ui-widget-content">
+            <form id="form-product-add">
+                <table class="table table-bordered table-bordered table-hover" role="grid"><!-- -->
+                    <tbody>
+                    <tr>
+                        <td><label for="categoryName">商品分类:</label></td>
+                        <td><input id="categoryName"  class="text ui-widget-content ui-corner-all" name="categoryName"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="name">商品名称：</label></td>
+                        <td> <input id="name" class="text ui-widget-content ui-corner-all" name="name"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="subtitle">商品标题：</label></td>
+                        <td> <input id="subtitle" class="text ui-widget-content ui-corner-all" name="subtitle"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="price">商品价格：</label></td>
+                        <td> <input id="price"  class="text ui-widget-content ui-corner-all" name="price"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="stock">库存数量：</label></td>
+                        <td> <input id="stock" class="text ui-widget-content ui-corner-all" name="stock"> </td>
+                    </tr>
+
+                    <tr>
+                        <td><label >库存所在：</label></td>
+                        <td><input  type="radio" name="place" value="1"/>仓　库
+                            <input  type="radio" name="place" value="2"/>店　内
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label >商品图片:</label></td>
+                        <td> <input id="input-file-val" onchange="$('#location').val($('#input-file').val());"
+                                    accept=".xls, .xlsx" style="display: none" name="file" type="file">
+                            <input id="input-file" value="选择图片"  type="button" onclick="$('#input-file-val').click();">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="detail">商品详情：</label></td>
+                        <td><textarea name="detail" id="detail" class="text ui-widget-content ui-corner-all" rows="3" cols="30"></textarea></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <div class="ui-dialog-buttonset"><button type="button" onclick="condition_product_add()">确认</button>
+                <button type="button" onclick="condition_product_style()" >取消</button></div></div>
+    </div>
+</div>
+
+<div id="update-yy" style="display: none" >
+    <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-describedby="dialog-dept-form" aria-labelledby="ui-id-1" style="position: absolute; height: auto; width:400px; top: 18%; left: 40%; display: block;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+        <span id="ui-id-2" class="ui-dialog-title">更新商品详情</span>
+        <button type="button" class="ui-dialog-titlebar-close" style="display: none;"></button></div>
+        <div id="dialog-dept-form-1" style="width: auto; min-height: 34px; max-height: none; height: auto;" class="ui-dialog-content ui-widget-content">
+            <form id="deptFormUpdate">
+                <table class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
+                    <input id="updateDetailsId" type="hidden"  name="id">
+                    <tbody>
+                    <tr>
+                        <td><label for="updateCategoryName">商品分类:</label></td>
+                        <td><input id="updateCategoryName"  class="text ui-widget-content ui-corner-all" name="categoryName"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="updateName">商品名称：</label></td>
+                        <td> <input id="updateName" class="text ui-widget-content ui-corner-all" name="name"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="updateSubtitle">商品标题：</label></td>
+                        <td> <input id="updateSubtitle" class="text ui-widget-content ui-corner-all" name="subtitle"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="updatePrice">商品价格：</label></td>
+                        <td> <input id="updatePrice"  class="text ui-widget-content ui-corner-all" name="price"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="updateStock">库存数量：</label></td>
+                        <td> <input id="updateStock" class="text ui-widget-content ui-corner-all" name="stock"> </td>
+                    </tr>
+
+                    <tr>
+                        <td><label >库存所在：</label></td>
+                        <td><input id="z-status" type="radio" name="status" value="1"/>在　售
+                            <input id="x-status" type="radio" name="status" value="2"/>下　架
+                            <input id="s-status" type="radio" name="status" value="3"/>删　除
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label >库存状态：</label></td>
+                        <td><input id="c-radio" type="radio" name="place" value="1"/>仓　库
+                            <input id="d-radio" type="radio" name="place" value="2"/>店　内
+                        </td>
+                    </tr>
+
+                   <!-- <tr>
+                        <td><label >商品图片:</label></td>
+                        <td> <input id="input-update-file-val" onchange="$('#location').val($('#input-update-file').val());"
+                                    accept=".xls, .xlsx" style="display: none" name="file" type="file">
+                            <input id="input-update-file" value="选择图片"  type="button" onclick="$('#input-update-file-val').click();">
+                        </td>
+                    </tr>-->
+
+                    <tr>
+                        <td><label for="detail">商品详情：</label></td>
+                        <td><textarea name="detail" id="updateDetail" class="text ui-widget-content ui-corner-all" rows="3" cols="30"></textarea></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <div class="ui-dialog-buttonset"><button type="button" onclick="condition_update_info()">修改</button>
+                <button type="button" onclick="condition_update_style()" >取消</button></div></div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div><center style='font-size:35px'>商&nbsp;品&nbsp;详&nbsp;情&nbsp;表</center></div>
+    <p  style="font-size: 20px;display: inline-block;width: 80%"><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< </p>
+    <button id="" style="position: absolute;right: 5%;display: inline-block" onclick="condition_product_style()"> 添加商品 </button>
+
+    <div id="product-list" ></div>
+    <div id="product-and-input" ></div>
+</div>
+
+<script src="../dialog.js-master/js/dialog.js"></script>
+<script type="text/javascript" src="js/product.js" ></script>
+</body>
+</html>

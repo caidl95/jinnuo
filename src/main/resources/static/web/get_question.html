@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>updatePassword</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="css/get_question.css">
+    <link rel="stylesheet" href="../dialog.js-master/css/dialog.css">
+</head>
+<body>
+<video style="width:100%" autobuffer="autobuffer" autoloop="autoloop" loop="loop" id="title_sp" muted="muted"
+       autoplay="autoplay">
+    <source src="mp4/5790382.mp4" type="video/mp4" id="sp_mp4">
+    <source src="mp4/5790382.webm">
+</video>
+<div class="login-flex">
+    <div class="container login-container login-container-flex">
+        <div class="row login-page">
+            <div>
+                <div>
+                    <div class="loginDiv">
+                        <div>
+                            <div id="login_logo" class="icon-logo"></div>
+                            <a href="../index.html">
+                                <div id="pngDivId" class="pngDiv"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="loginPngDiv">
+                    </div>
+                    <div class="errorMessage">
+                        <strong class="login-error"> </strong>
+                    </div>
+                    <div class="panel-body">
+                        <form id="form-get" action="" method="post">
+                            <fieldset class="panel-fieldset">
+                                <div class="form-group">
+                                    <input id="username" class="form-control login_userName" placeholder="请输入用户名"
+                                           type="text" name="username">
+                                </div>
+                                <div class="checkbox" style="color: red;"></div>
+                                <button id="btn-get-question" class="btn btn-lg btn-primary btn-block" type="button">
+                                    <span class="font-color">获取密保问题</span></button>
+                                <input id="null" class="form-control login_password" readonly="readonly">
+                                <div id="div-get-question">
+                                    <div class="form-group">
+                                        <input id="question" class="form-control login_password" placeholder="请输入密保问题"
+                                               type="text" name="question">
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="answer" class="form-control login_password" placeholder="请输入密保答案"
+                                               type="text" name="answer">
+                                    </div>
+                                    <div class="checkbox" style="color: red;"></div>
+                                    <button id="btn-get-token" class="btn btn-lg btn-primary btn-block" type="button">
+                                        <span class="font-color">效验密保答案</span></button>
+                                </div>
+                                <div id="div-update-password">
+                                    <input id="token" type="hidden" class="form-control login_password"
+                                           readonly="readonly" name="forgetToken">
+                                    <div class="form-group">
+                                        <input id="password" class="form-control login_password" placeholder="请输入新的密码"
+                                               type="password" name="passwordNew">
+                                    </div>
+                                    <div class="checkbox" style="color: red;"></div>
+                                    <button id="btn-get-update" class="btn btn-lg btn-primary btn-block" type="button">
+                                        <span class="font-color">修改密码</span></button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/cookie.js"></script>
+<script src="../dialog.js-master/js/zepto.min.js"></script>
+<script src="../dialog.js-master/js/dialog.js"></script>
+<script type="text/javascript" src="js/get_question.js"></script>
+</body>
+</html>

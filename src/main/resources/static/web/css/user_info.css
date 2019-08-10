@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+body{
+	margin: 0;
+	overflow-x:hidden;
+	background-size: 100%;
+	background-color: #eeeff3;
+
+}
+
+.pager input[type='text'] {
+	width: 20px;
+	padding: 4px 5px;
+	border: 1px solid #1E1A1E;
+	border-radius: 2px;
+	-o-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-wekit-border-radius: 2px;
+	box-shadow: 0 0 0 2px rgba(255,255, 255, 0.2);
+	-o-box-shadow: 0 0 0 2px rgba(255,255, 255, 0.2);
+	-webkit-box-shadow: 0 0 0 2px rgba(255,255, 255, 0.2);
+	-moz-box-shadow: 0 0 0 2px rgba(255,255, 255, 0.2);
+/*	color: #CDA869;*/
+	background-color: rgba(177,150,95,0);
+	margin : 5px ;
+}
+.pager input[type='text']:focus, .table input[type='text']:hover {
+	border: 1px solid #1E1A1E;
+	outline: none;
+}
+.pager a{
+	color: #1E1A1E;
+}
+.button{
+	border:1px solid #1E1A1E;
+	padding:4px;
+}
+.button no-page{
+	padding:4px;
+	border:1px solid #1E1A1E;
+}
+#cart-del{
+	margin: 12px 0  12px 0 ;
+	font-size: 18px;
+	background-color: rgba(177,150,95,0);
+}
+
+/*---------------------------*/
+#box{
+	width: 1000px;
+	margin: 30px auto;
+	font-family: 'Microsoft YaHei';
+	font-size: 20px;
+}
+#form-input{
+	width: 100%;
+}
+#search{
+	border-color: #C2C1C2;
+	padding :0;
+	height: 35px;
+/*	border:1px solid #1E1A1E ;*/
+	background-color: rgba(177,150,95,0);
+	text-align: center;
+	line-height: 32px;
+	cursor: pointer;
+	font-size: 15px;
+	color: #534453;
+
+	line-height:10px;
+
+}
+
+/*------------------------*/
+
+
+/*个人信息边框*/
+.ui-dialog, .ui-jqdialog {
+	z-index: 1050 !important;
+	background-color: #FFF;
+	padding: 0;
+	border: 1px solid #DDD;
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+/*标题*/
+.ui-dialog .ui-dialog-titlebar, .ui-jqdialog .ui-dialog-titlebar, .ui-dialog .ui-jqdialog-titlebar, .ui-jqdialog .ui-jqdialog-titlebar {
+	background-color: #F1F1F1;
+	font-size: 16px;
+	color: #669fc7;
+	padding: 5px;
+	margin: 2px;
+}
+/*内边框*/
+.ui-dialog .ui-dialog-content {
+	position: relative;
+	border: 0;
+	padding: .5em 1em;
+	background: none;
+	overflow: auto;
+}
+
+/*底部按钮*/
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+	float: right;
+}
+.ui-dialog .ui-dialog-buttonpane button {
+	margin: .5em .4em .5em 0;
+	cursor: pointer;
+}
+
+#appointment-list{
+	padding: 20px;
+	margin: 20px;
+	background-color: #FAFBFF;
+	width: 100%;
+}
+#table-users{
+	width: 100%;
+}
+.xs-mx-m1{
+	background-color: #F0F1FF;
+}
+#xs-mx-ml{
+	background-color: #E1E2F0;
+}

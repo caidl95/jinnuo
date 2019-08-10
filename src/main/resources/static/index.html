@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>login</title>
+    <!-- 标题logo -->
+    <!--<link rel="shortcut icon" href="./imgs/logo1.jpg">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="dialog.js-master/css/dialog.css">
+
+    <script src="dialog.js-master/js/zepto.min.js"></script>
+    <script src="dialog.js-master/js/dialog.js"></script>
+</head>
+<body>
+<video style="width:100%" autobuffer="autobuffer" autoloop="autoloop" loop="loop" id="title_sp" muted="muted"
+       autoplay="autoplay">
+    <source src="web/mp4/5790381.mp4" type="video/mp4" id="sp_mp4">
+    <source src="web/mp4/5790381.webm">
+</video>
+<div class="login-flex">
+    <div class="container login-container login-container-flex">
+        <div class="row login-page">
+            <div>
+                <div>
+                    <div class="loginDiv">
+                        <div>
+                            <div id="login_logo" class="icon-logo"></div>
+                            <div class="icon-fboxclient login_text"></div>
+                        </div>
+                    </div>
+                    <div class="loginPngDiv">
+                        <div class="pngDiv"></div>
+                    </div>
+                    <div class="errorMessage">
+                        <strong class="login-error"> </strong>
+                    </div>
+                    <div class="panel-body">
+                        <form id="form-login" action="" method="post">
+                            <fieldset class="panel-fieldset">
+                                <div class="form-group">
+                                    <input id="username" class="form-control login_userName"
+                                           placeholder="Email/Telephone/Phone" name="username" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input id="password" type="password" class="form-control login_password"
+                                           placeholder="Password" autocomplete="off" data-val="true" name="password">
+                                </div>
+                                <div class="form-group">
+                                    <input id="imageCode" type="text" name="imageCode" class="form-control"
+                                           placeholder="VerificationCode">
+                                    <a href="javascript:location.reload();"> <img id="code-img" src="/code/image"> </a>
+                                </div>
+                                <div class="form-group login-remember">
+                                </div>
+                                <div class="checkbox" style="color: red;"></div>
+                                <button id="btn-login" class="btn btn-lg btn-primary btn-block" type="button"><span
+                                        class="font-color">登　录</span></button>
+                                <!-- <div class="form-group">
+                                        <input id="login_btn" name="button" type="button" class="btn form-control login_btn" value="登　录">
+                                 </div>-->
+                            </fieldset>
+                            <div class="form-group">
+                                <ul id="list-unstyled-login-01"
+                                    class="list-unstyled register_display login-btn-register">
+                                    <li class="login_linkStyle"><a class="linkStyle" href="err/noAuth.html">用户注册</a></li>
+                                </ul>
+                                <ul id="list-unstyled-login-02"
+                                    class="list-unstyled register_display login-btn-forgotpwd">
+                                    <li class="login_linkStyle"><a class="linkStyle" href="web/get_question.html">找回密码</a></li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <footer class="icp-display login-footer" id="icp-display-login">
+             <a target="_blank" href="http://www.miibeian.gov.cn/">沪ICP备10039220000号</a>
+         </footer>-->
+    </div>
+</div>
+</div>
+<!--页脚结束-->
+<script type="text/javascript" src="web/js/cookie.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>reg</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 标题logo -->
+    <!-- 本地文件 -->
+    <link  rel="stylesheet" href="reg.css">
+    <link rel="stylesheet" href="../../dialog.js-master/css/dialog.css">
+</head>
+<body>
+<video style="width:100%"  autobuffer="autobuffer" autoloop="autoloop" loop="loop"  id="title_sp" muted="muted" autoplay="autoplay"  >
+    <source src="../mp4/5790382.mp4" type="video/mp4" id="sp_mp4">
+    <source src="../mp4/5790382.webm" >
+</video>
+<div class="login-flex">
+    <div class="container login-container login-container-flex">
+        <div class="row login-page">
+            <div>
+                <div>
+                    <div class="loginDiv">
+                        <div>
+                            <div id="login_logo" class="icon-logo">
+                            </div>
+                            <a href="../../index.html" >
+                                <div id="pngDivId" class="pngDiv"> </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="loginPngDiv">
+                    </div>
+                    <div class="errorMessage">
+                        <strong class="login-error"> </strong>
+                    </div>
+                    <div class="panel-body" >
+                        <form id="form-reg" action="" method="post">
+                                <fieldset class="panel-fieldset">
+                                    <div class="form-group">
+                                        <input id="username" class="form-control login_userName" placeholder="请输入用户名" type="text" name="username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="password" class="form-control login_password" placeholder="请输入密码" type="password" name="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="email" class="form-control login_password" placeholder="请输入邮箱" type="text" name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="phone" class="form-control login_password" placeholder="请输入手机号码" type="text" name="phone">
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="question" class="form-control login_password" placeholder="请输入密保问题" type="text" name="question">
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="answer" class="form-control login_password" placeholder="请输入密保答案" type="text" name="answer">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="radio" name="role" value="0"  />管理员
+                                        <input type="radio" name="role" value="1" />店　员
+                                        <!--<input id="role" class="form-control login_password" placeholder="请输入身份，0-管理员,1-员工" type="text" name="role">-->
+                                    </div>
+                                    <div class="checkbox" style="color: red;"></div>
+                                    <button id="btn-reg" class="btn btn-lg btn-primary btn-block" type="button"><span class="font-color">注　册</span></button>
+                                </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../../dialog.js-master/js/zepto.min.js"></script>
+<script src="../../dialog.js-master/js/dialog.js"></script>
+<script type="text/javascript" src="reg.js" ></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="xyz.zhuoxuan.jinnuo.mapper.ClientMapper">
+    <resultMap id="BaseResultMap" type="xyz.zhuoxuan.jinnuo.entity.Client">
+        <constructor>
+            <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="addr" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="is_default" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </constructor>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,phone,email,addr,is_default,create_time, update_time
+    </sql>
+
+    <insert id="insert" parameterType="xyz.zhuoxuan.jinnuo.entity.Client" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into zx_client (
+        id,name,phone,email,addr,is_default,create_time,update_time
+        )values (
+        #{id,jdbcType=INTEGER},#{name,jdbcType=VARCHAR},#{phone,jdbcType=VARCHAR},
+        #{email,jdbcType=VARCHAR},#{addr,jdbcType=VARCHAR},#{isDefault,jdbcType=INTEGER},
+        now(),now()
+        )
+    </insert>
+
+    <select id="findById" resultType="xyz.zhuoxuan.jinnuo.entity.Client" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from zx_client
+        where id = #{id}
+    </select>
+
+    <select id="selectById" resultType="xyz.zhuoxuan.jinnuo.vo.ClientVo" parameterType="java.lang.Integer">
+        select
+        id,name,phone
+        from zx_client
+        where id = #{id}
+    </select>
+
+    <update id="updateByPrimaryKey" parameterType="xyz.zhuoxuan.jinnuo.entity.Client">
+        update zx_client
+        set
+        name=#{name},phone=#{phone,jdbcType=VARCHAR},email=#{email,jdbcType=VARCHAR},
+        addr=#{addr,jdbcType=VARCHAR},is_default=#{isDefault,jdbcType=INTEGER},
+        create_time=#{createTime,jdbcType=TIMESTAMP},update_time = now()
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKeySelective" parameterType="xyz.zhuoxuan.jinnuo.entity.Client">
+        update zx_client
+        set
+        <if test="name != null">
+            name = #{name,jdbcType=VARCHAR},
+        </if>
+        <if test="phone != null">
+            phone = #{phone,jdbcType=VARCHAR},
+        </if>
+        <if test=" email != null">
+            email = #{email,jdbcType=VARCHAR},
+        </if>
+        <if test=" addr != null">
+            addr = #{addr,jdbcType=VARCHAR},
+        </if>
+        <if test="isDefault != null">
+            is_default = #{isDefault,jdbcType=INTEGER},
+        </if>
+        <if test="createTime != null">
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+        </if>
+        update_time = now()
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="list" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from zx_client
+    </select>
+
+    <select id="selectByPhone" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from zx_client
+        where phone = #{phone}
+    </select>
+
+    <select id="findByNameAndPhone" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from zx_client
+        where name = #{name}
+        and phone = #{phone}
+    </select>
+
+    <select id="selectByNameAndPhone" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from zx_client
+        where is_default = 0
+        <if test="name != null">
+            and name like #{name}
+        </if>
+        <if test="phone != null">
+            and phone like #{phone}
+        </if>
+    </select>
+
+</mapper>

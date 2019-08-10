@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="xyz.zhuoxuan.jinnuo.mapper.SellProductMapper" >
+  <resultMap id="BaseResultMap" type="xyz.zhuoxuan.jinnuo.entity.SellProduct" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sell_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="category_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="product_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="product_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="num" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="price" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="place" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id,sell_id,category_id,product_id,product_name,num,price,place
+  </sql>
+
+  <insert id="insert" parameterType="xyz.zhuoxuan.jinnuo.entity.SellProduct" useGeneratedKeys="true" keyProperty="id">
+    insert into zx_sell_product (
+       <include refid="Base_Column_List"/>
+    )values (
+      #{id,jdbcType=INTEGER},#{sellId,jdbcType=INTEGER},#{categoryId,jdbcType=INTEGER},#{productId,jdbcType=INTEGER},
+     #{productName,jdbcType=VARCHAR},#{num,jdbcType=INTEGER},#{price,jdbcType=DECIMAL},#{place,jdbcType=INTEGER}
+    )
+</insert>
+
+  <select id="selectBySellId" resultMap="BaseResultMap" parameterType="map">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM zx_sell_product
+    where sell_id = #{sellId}
+  </select>
+  <!--
+    <select id="selectByEndTime" resultMap="BaseResultMap" parameterType="map">
+      SELECT
+      <include refid="Base_Column_List"/>
+      FROM zx_sell
+      WHERE end_time like #{endTime}
+    </select>
+
+    <select id="selectByEndTimeAndPlace" resultMap="BaseResultMap" parameterType="map">
+      SELECT
+      <include refid="Base_Column_List"/>
+      FROM zx_sell
+      WHERE 1=1
+      <if test="endTime != null">
+        and end_time like #{endTime}
+      </if>
+      <if test="place != null">
+        and place = #{place}
+      </if>
+    </select>-->
+
+
+
+
+</mapper>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="xyz.zhuoxuan.jinnuo.mapper.SellMapper">
+    <resultMap id="BaseResultMap" type="xyz.zhuoxuan.jinnuo.entity.Sell">
+        <constructor>
+            <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="client_id" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="pay_type" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="payment" jdbcType="DECIMAL" javaType="java.math.BigDecimal"/>
+            <arg column="end_time" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </constructor>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,client_id,pay_type ,payment,end_time,create_time,update_time
+    </sql>
+
+    <insert id="insert" parameterType="xyz.zhuoxuan.jinnuo.entity.Sell" useGeneratedKeys="true" keyProperty="id">
+        insert into zx_sell (
+        <include refid="Base_Column_List"/>
+        )values (
+        #{id,jdbcType=INTEGER},#{clientId,jdbcType=INTEGER},#{payType,jdbcType=INTEGER},
+        #{payment,jdbcType=DECIMAL},#{endTime,jdbcType=TIMESTAMP},now(),now()
+        )
+    </insert>
+
+    <select id="list" resultMap="BaseResultMap" parameterType="map">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM zx_sell
+    </select>
+
+    <resultMap id="SellResultMap" type="xyz.zhuoxuan.jinnuo.vo.SellVo">
+        <id column="id" property="sellId" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+        <result column="pay_type" property="payType" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+        <result column="payment" property="payment" jdbcType="DECIMAL" javaType="java.math.BigDecimal"/>
+        <result column="end_time" property="endTime" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        <association property="clientVo" column="client_id"
+                     select="xyz.zhuoxuan.jinnuo.mapper.ClientMapper.selectById"/>
+        <association property="sellProductVos" column="id"
+                     select="xyz.zhuoxuan.jinnuo.mapper.SellProductMapper.selectBySellId"/>
+    </resultMap>
+
+
+    <select id="selectByEndTime" resultMap="SellResultMap" parameterType="map">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM zx_sell
+        WHERE 1=1
+        <if test="endTime!=null">
+            AND end_time like #{endTime}
+        </if>
+    </select>
+    <!--
+      <select id="selectByEndTimeAndPlace" resultMap="BaseResultMap" parameterType="map">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM zx_sell
+        WHERE 1=1
+        <if test="endTime != null">
+          and end_time like #{endTime}
+        </if>
+        <if test="place != null">
+          and place = #{place}
+        </if>
+      </select>&ndash;&gt;
+
+      <select id="selectById" resultMap="BaseResultMap" parameterType="map">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM zx_sell
+        WHERE id = #{id}
+      </select>-->
+
+
+</mapper>

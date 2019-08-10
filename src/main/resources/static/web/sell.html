@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>sell</title>
+	<script src="../js/jquery-1.9.1.min.js"></script>
+	<link rel="stylesheet" href="../dialog.js-master/css/dialog.css">
+	<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link  rel="stylesheet" href="css/sell.css">
+</head>
+<body>
+
+<div id="placeholder">
+	<div id="box" class="form-group">
+		<form id="form-input">
+			<input id="input-ss"  class="form-control login_password" type="date" name="endTime" placeholder="请按照时间搜索以：2019-06-26 格式">
+			<button id="search" class="btn btn-lg btn-primary btn-block" type="button"><span id="search-span">搜索 </span></button>
+		</form>
+	</div>
+<!--	<center style="font-size:22px" >请按照销售时间搜索</center>-->
+</div>
+
+<div id="add-sell-yy" style="display: none"><!---->
+	<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-describedby="dialog-dept-form" aria-labelledby="ui-id-1" style="position: absolute; height: auto; width: 770px; top: 18%; left: 30%; display: block;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+		<span id="ui-id-1" class="ui-dialog-title">销售记录</span>
+		<button type="button" class="ui-dialog-titlebar-close" style="display: none;"></button></div>
+		<div id="dialog-dept-form" style="width: auto; min-height: 34px; max-height: none; height: auto;" class="ui-dialog-content ui-widget-content">
+			<form id="form-sell-add">
+				<table class="table table-bordered table-bordered table-hover" role="grid"><!-- -->
+					<tbody>
+					<tr>
+						<td><label for="clientName">客户名称:</label></td>
+						<td><input id="clientName" class="text ui-widget-content ui-corner-all" name="clientName"></td>
+
+						<td><label for="productName1">商品名称：1</label></td>
+						<td> <input id="productName1" style="width: 140px" class="text ui-widget-content ui-corner-all"  name="productName"></td>
+
+						<td><label for="num1" >销售数量：1</label></td>
+						<td><input id="num1" style="width: 60px" class="text ui-widget-content ui-corner-all"  name="num"></td>
+
+					</tr>
+
+					<tr>
+						<td><label for="phone">客户电话：</label></td>
+						<td><input id="phone" class="text ui-widget-content ui-corner-all"  name="phone"></td>
+
+						<td><label for="productName2">商品名称：2</label></td>
+						<td> <input id="productName2" style="width: 140px" class="text ui-widget-content ui-corner-all"  name="productName"></td>
+
+						<td><label for="num2" >销售数量：2</label></td>
+						<td><input id="num2" style="width: 60px" class="text ui-widget-content ui-corner-all"  name="num"></td>
+
+					</tr>
+
+
+					<tr>
+						<td><label for="payment" >实际收款：</label></td>
+						<td><input id="payment" class="text ui-widget-content ui-corner-all" name="payment"></td>
+
+						<td><label for="productName3">商品名称：3</label></td>
+						<td> <input id="productName3" style="width: 140px"  class="text ui-widget-content ui-corner-all"  name="productName"></td>
+
+						<td><label for="num3" >销售数量：3</label></td>
+						<td><input id="num3" style="width: 60px" class="text ui-widget-content ui-corner-all"  name="num"></td>
+
+					</tr>
+					<tr>
+						<td><label  >收款方式：</label></td>
+						<td>  <input  type="radio" name="payType" value="1"  />支付宝
+							<input  type="radio" name="payType" value="2"  />微　信
+							<input  type="radio" name="payType" value="3"  />现　金</td>
+
+						<td><label for="productName4">商品名称：4</label></td>
+						<td> <input id="productName4" style="width: 140px" class="text ui-widget-content ui-corner-all"  name="productName"></td>
+
+						<td><label for="num4" >销售数量：4</label></td>
+						<td><input id="num4" style="width: 60px" class="text ui-widget-content ui-corner-all"  name="num"></td>
+
+					</tr>
+					<tr>
+						<td><label  >商品位置：</label></td>
+						<td>  <input  type="radio" name="place" value="1"  />仓　库
+							<input  type="radio" name="place" value="2"  />店　内</td>
+
+						<td><label for="productName5">商品名称：5</label></td>
+						<td> <input id="productName5" style="width: 140px"  class="text ui-widget-content ui-corner-all"  name="productName"></td>
+
+						<td><label for="num5" >销售数量：5</label></td>
+						<td><input id="num5" style="width: 60px" class="text ui-widget-content ui-corner-all"  name="num"></td>
+
+					</tr>
+					<tr>
+						<td><label for="endTime" >交易时间：</label></td>
+						<td> <input id="endTime"  class="text ui-widget-content ui-corner-all"  type="datetime-local"  name="endTime"></td>
+
+						<td><label for="productName6">商品名称：6</label></td>
+						<td> <input id="productName6" style="width: 140px" class="text ui-widget-content ui-corner-all"  name="productName"></td>
+
+						<td><label for="num6" >销售数量：6</label></td>
+						<td><input id="num6" style="width: 60px" class="text ui-widget-content ui-corner-all"  name="num"></td>
+
+					</tr>
+
+					</tbody>
+				</table>
+			</form>
+		</div>
+		<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+			<div class="ui-dialog-buttonset"><button type="button"  onclick="condition_sell_add()">确认</button>
+				<button type="button"  onclick="condition_sell_style()">取消</button></div></div>
+	</div>
+</div>
+
+
+
+<div class="container-fluid">
+	<div  id='page2' style='border:0px solid green;width:95%;' class="split">
+		<center style='font-size:35px'>销&nbsp;售&nbsp;详&nbsp;情&nbsp;表</center>
+		<p  style="font-size: 20px;display: inline-block;width: 80%"><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< </p>
+		<button id="" style="position: absolute;right: 5%;display: inline-block" onclick="condition_sell_style()"> 添加销售记录 </button>
+
+		<div id="sell-mx"></div>
+	</div>
+
+	<div id="sell-and-input">
+	</div>
+</div>
+
+<script src="../dialog.js-master/js/dialog.js"></script>
+<script type="text/javascript" src="js/sell01.js" ></script>
+</body>
+</html>
+

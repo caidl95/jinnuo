@@ -1,0 +1,142 @@
+@CHARSET "UTF-8";
+body {
+    margin: 0;
+    overflow-x: hidden;
+    color: #CDA869;
+}
+
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -9999;
+}
+
+@keyframes chan {
+    0% {
+        color: #b1965f;
+    }
+    25% {
+        color: #ccad6e;
+    }
+    50% {
+        color: #CDA869;
+    }
+    75% {
+        color: #b1965f;
+    }
+    100% {
+        color: #ccad6e;
+    }
+}
+
+a {
+    color: #f90;
+    animation: chan 5s linear 0s infinite;
+}
+
+#status-record {
+    color: #f90;
+    animation: chan 5s linear 0s infinite;
+}
+
+#backdrop {
+    width: auto;
+    background-repeat: no-repeat;
+    overflow: hidden; /* 解决粘连问题  */
+}
+
+.loginDiv {
+    margin: 150px 0 0 0;
+    position: relative;
+    width: auto;
+
+}
+
+#name {
+    border: 1px solid #CDA869;
+    background-color: rgba(0, 0, 0, 0.05)
+}
+
+#phone {
+    border: 1px solid #CDA869;
+    background-color: rgba(0, 0, 0, 0.05)
+}
+
+#email {
+    border: 1px solid #CDA869;
+    background-color: rgba(0, 0, 0, 0.05)
+}
+
+#addr {
+    border: 1px solid #CDA869;
+    background-color: rgba(0, 0, 0, 0.05)
+}
+
+.font-color {
+    color: #CDA869;
+}
+
+#input-file {
+    width: 187px;
+    border: 1px solid #CDA869;
+    background-color: rgba(177, 150, 95, 0);
+    color: #CDA869;
+}
+
+#btn-client-add {
+    border: 1px solid #CDA869;
+    background-color: rgba(177, 150, 95, 0)
+}
+
+#login_logo {
+    background: url("../img/20190611103417.png") no-repeat; /**/
+    background-size: 100%;
+    width: 500px;
+    height: 200px;
+    left: 30%;
+
+    position: relative;
+}
+
+#pngDivId {
+    background: url("../img/4154638.png") no-repeat;
+    background-size: 100%;
+    width: 55px;
+    height: 55px;
+    top: 60%;
+    left: 48%;
+    position: absolute;
+}
+
+.panel-fieldset {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    left: 35%;
+}
+
+#icp-display-login {
+    position: relative;
+    left: 44%;
+}
+
+#list-unstyled-login-01 {
+    position: relative;
+    bottom: 140px;
+    left: 37%;
+}
+
+#list-unstyled-login-02 {
+    position: relative;
+    bottom: 170px;
+    left: 59%;
+}
+
+#panel-body-id {
+    display: none;
+}
